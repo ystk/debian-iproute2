@@ -1,0 +1,41 @@
+From: Alexander Wirt <formorer@debian.org>
+Date: Mon, 10 Jun 2013 11:47:00 +0200
+Subject: Add moo feature
+
+---
+ ip/ip.c |   15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+
+diff --git a/ip/ip.c b/ip/ip.c
+index e10ddb2..962fd87 100644
+--- a/ip/ip.c
++++ b/ip/ip.c
+@@ -61,6 +61,20 @@ static int do_help(int argc, char **argv)
+         return 0;
+ }
+ 
++static int do_moo(int argc, char **argv)
++{
++	
++fprintf(stderr,
++"\n"
++" _ __ ___   ___   ___\n"
++"| '_ ` _ \\ / _ \\ / _ \\\n"
++"| | | | | | (_) | (_) |\n"
++"|_| |_| |_|\\___/ \\___/\n"
++"\n\n"
++"P.S. no real cows were harmed for this moo\n");
++	exit(1);
++}
++                       
+ static const struct cmd {
+ 	const char *cmd;
+ 	int (*func)(int argc, char **argv);
+@@ -89,6 +103,7 @@ static const struct cmd {
+ 	{ "netns",	do_netns },
+ 	{ "netconf",	do_ipnetconf },
+ 	{ "help",	do_help },
++	{ "moo",	do_moo }, 
+ 	{ 0 }
+ };
+ 
